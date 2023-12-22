@@ -1,0 +1,45 @@
+
+.card{
+    height: 325px;
+    
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay{
+position: absolute;
+display: none !important;
+
+}
+
+.card:hover{
+    border: solid;
+    border-width: 5px;
+    border-color: green;
+}
+.card:hover>.card-overlay{
+   display: block !important; 
+   background-color: rgba(0, 0, 0, 0.684);
+   width: 100%;
+   height: 100%;
+}
+h4{
+    color: white;
+}
+.caption{
+    color: white;
+    font-weight: 500;
+}
+.caplabel{
+    color: white;
+    font-weight: 200;
+}

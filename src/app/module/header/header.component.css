@@ -1,0 +1,36 @@
+.yts{
+    width: 100px;
+    height: 50px;
+}
+li{
+    color: white;
+}
+.nav-item{
+  font-family: Arimo,Arial,Helvetica,lucida grande,sans-serif;
+  color: #919191;
+  font-weight: 600;
+  font-size: .85em;
+}
+.heading{
+    font-size: 1.2em;
+    color:#919191;
+}
+input{
+    color: #919191;
+     font-weight: 500;
+    border-radius: 1px;
+border: none;
+    font-size: small;
+
+}
+.search{
+    border: 1px solid #919191 !important;
+}
+input:focus-visible{
+    outline: none;
+}
+/* .bi-search{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+} */

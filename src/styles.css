@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: black;
+}
+
+.bg-green{
+background-color: green;
+}
+.text-green{
+color: green;
+}
