@@ -1,0 +1,22 @@
+.content-dark{
+    background: #171717;
+    width: 100%;
+    padding: 50px 0px;
+    
+}
+h4{
+   color: #5a5a5a;
+}
+input{
+    background-color: #282828;
+    width: 100%;
+    color: white !important;
+}
+select{
+    background-color: #282828;
+    color: #a2a2a2;
+    border:none;
+    width: 130px;
+    padding-left: 10px;
+    height: 40px;
+}

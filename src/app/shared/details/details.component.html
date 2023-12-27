@@ -1,0 +1,306 @@
+<div class="container justify-content-center">
+   
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+    </div>
+    <div class="row ">
+        <div class="col-6">
+            <div class="d-block  d-md-none">
+                <h6 class="mb-4">{{data.name}}</h6>
+                <h6 class="mb-0">{{data.year}}</h6>
+                <h6>{{data.year}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-md-4 col-lg-3">
+            
+            <div class="card">
+                <img [src]="data.image" alt="">
+            </div>
+            <div class="d-flex flex-column">
+                <button class="btn btn-success d-none d-lg-block rounded-1 my-2 "><i class="downloadIcon bi-download"></i>&nbsp;&nbsp;Download</button>
+                <button class="btn btn-primary rounded-1  my-1 ">Watch Now</button>
+            </div>
+        </div>
+        <div class="col-6 col-lg-5 col-md  mx-lg-5">
+            <div class="d-none d-md-block">
+                <h1 class="mb-4">{{data.name}}</h1>
+                <h4 class="mb-0">{{data.year}}</h4>
+                <h4>{{data.genre}}</h4>
+            </div>
+            <div class="d-none d-lg-block">
+                <i  class="d-none d-lg-inline avail">Available in: </i>
+                <button class="btn btn-outline-light rounded-1 size-btn py-0">720.WEB</button>
+                <button class="btn btn-outline-light rounded-1 mx-2 size-btn py-0">1080.WEB</button>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="d-none d-lg-block">
+                    <span class="details">1080px265: 36%</span>
+                    <span class="details">WEB: same quality as BluRay</span>
+                    <span class="details">BluRay estimated release date: <span>February 27,2024</span></span>
+                </div>
+                <div class="d-flex my-4 ">
+                   <i class="downloadIcon_2 d-none d-lg-block bi-download"></i>
+                   <h4 class="d-none d-lg-block">&nbsp;Subtitle Requested</h4>
+                </div>
+                <div>
+                    <div class="d-flex">
+                        <i style="width: 75px;" class="bi bi-heart-fill"></i>
+                        <h4 class="m-0">8</h4>
+                        
+                    </div>
+                    <div class="d-flex  align-items-end">
+                        <span style="width: 75px;"><img class="Icon" src="https://yts.mx/assets/images/website/rt-certified-fresh.svg" alt=""></span>
+                        <h4 class="m-0">91%</h4>
+                        <span class="details_1 d-none d-md-block">&nbsp;TOMATOMETER · 141 reviews</span>
+                    </div>
+                    <div class="d-flex py-2 align-items-end">
+                        <span style="width: 75px;"><img class="Icon" src="https://yts.mx/assets/images/website/rt-upright.svg"></span>
+                        <h4 class=" m-0">68%</h4>
+                        <span class="details_1 d-none d-md-block">&nbsp;AUDIENCE</span>
+                    </div>
+                    <div class="d-flex m-0 align-items-end">
+                        <span style="width: 75px;"><img   src="https://yts.mx/assets/images/website/logo-imdb.svg" alt=""></span>
+                        <h4 class=" m-0">{{data.rating}}</h4><span class="details_1">/10</span>&nbsp;&nbsp;<i class="bi bi-star-fill"></i><span class="details_1">16.1k</span>
+                    </div>
+                    <div class="d-flex flex-column gap-2  d-lg-none d-md-block">
+                        <i class="d-none d-lg-inline avail">Available in: </i>
+                        <button class="btn btn-outline-light rounded-1 size-btn py-0">720.WEB</button>
+                        <button class="btn btn-outline-light rounded-1 mx-2 size-btn py-0">1080.WEB</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="col d-none d-lg-block">
+             <h5>Similer Movies</h5>
+             <div class="d-flex mb-3 gap-3" >
+                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg" >
+                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
+             </div>
+             <div class="d-flex gap-3">
+                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
+                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
+             </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <div class="d-flex flex-wrap" >
+                <a class="category" href="">holiday</a>
+                <a class="category" href="">revenge</a>
+                <a class="category" href="">death of son</a>
+                <a class="category" href="">chrismas</a>
+                <a class="category" href="">no dialogue</a>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col  d-lg-inline d-none">
+            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+        </div>
+        <div class="col  d-lg-inline d-none">
+            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+        </div>
+        <div class="col  d-lg-inline d-none">
+            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot3.jpg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+           <h3>Plot summary</h3>
+           <p>A tormented father witnesses his young son die when caught in a gang's crossfire on Christmas Eve. 
+            While recovering from a wound that costs him his voice, he makes vengeance his life's mission and
+             embarks on a punishing training regimen in order to avenge his son's death.
+            </p>
+            <p >
+                <br>
+                <em class="d-block">Uploaded by: FREEMAN</em>
+                <span>December 22, 2023 at 10:52 PM</span>
+            </p>
+        </div> 
+        <div class="col-lg-4 col-md-6">
+           <h3>Director</h3>
+           <div class="cast-list border-bottom pb-2 mb-5 ">
+               <img class="director" src="https://img.yts.mx/assets/images/actors/thumb/nm0000247.jpg">
+               <span class="px-3">John woo</span>
+           </div>
+           <h3>Top cast</h3>
+           <div class="top-cast">
+              <div class="actor border-bottom pb-2 my-2">
+                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
+                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
+              </div>
+            <div class="actor border-bottom pb-2 my-2">
+                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
+                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
+            </div>
+            <div class="actor border-bottom pb-2 my-2">
+                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
+                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
+            </div>
+            <div class="actor border-bottom pb-2 my-2">
+                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
+                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-lg-10">
+            <div class="d-flex align-items-center">
+                <h3 >Tech specs</h3>
+                <nav class="nav nav-tabs px-5 mx-5 border-0 " id="nav-tab" role="tablist">
+                    <button class="nav-link active  " id="nav-720-tab" data-bs-toggle="tab"
+                     data-bs-target="#nav-720" 
+                     type="button" 
+                     role="tab" aria-controls="nav-720" aria-selected="true">720p.web</button>
+                     <button class="nav-link mx-3" 
+                     id="nav-1080-tab" data-bs-toggle="tab" data-bs-target="#nav-1080" type="button"
+                      role="tab" aria-controls="nav-1080" aria-selected="false">1080p.web</button>
+                </nav>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+                   <div class="tab-pane show active " id="nav-720" role="tabpanel" aria-labelledby="nav-720-tab">
+                     <div class="card tech">
+                        <div class="d-flex">
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;985.62 MB</td>
+                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1280*694</td>
+                                        <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English 2.0</td>
+                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;R</td>
+                                    </tr>
+                                    <tr>
+                                        <td  style="color:#0dd67f;font-weight: 700;"><i class="bi bi-badge-cc-fill"></i>&nbsp;&nbsp;Subtitles</td>
+                                        <td><i class="bi bi-film"></i>&nbsp;&nbsp;23.976 fps</td>
+                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;1 hr 41 min</td>
+                                        <td style="font-weight: 700;">Seeds</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                   </div>
+                    <div class="tab-pane" id="nav-1080" role="tabpanel" aria-labelledby="nav-1080-tab">
+                        <div class="card tech">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;1.88 GB</td>
+                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1920*1040</td>
+                                        <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English 2.0</td>
+                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;R</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:#0dd67f;font-weight: 700;"><i class="bi bi-badge-cc-fill"></i>&nbsp;&nbsp;Subtitles</td>
+                                        <td><i class="bi bi-film"></i>&nbsp;&nbsp;23.976 fps</td>
+                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;1 hr 41 min</td>
+                                        <td style="font-weight: 700;">Seeds</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div> 
+            
+        </div>
+    </div>
+    <div class="row d-flex flex-column-reverse flex-lg-row ">
+       <div class="col-lg-6">
+        <h3><i class="bi bi-chat-left-fill"></i>&nbsp;&nbsp;32 Comments</h3>
+        <div class="card comment mt-5  justify-content-center ">
+            <div class="d-flex justify-content-around  ">
+                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
+                <div class="d-flex flex-column">
+                    <span>grancabeza December 26, 2023 at 02:59 am</span>
+                    <span>thanks for the movie but video quelity is rather poor</span>
+                </div>
+                
+                <span>0</span>
+                <i class="bi bi-heart"></i>
+            </div>
+        </div>
+        <div class="card comment mt-1  justify-content-center ">
+            <div class="d-flex justify-content-around  ">
+                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
+                <div class="d-flex flex-column">
+                    <span>grancabeza December 26, 2023 at 02:59 am</span>
+                    <span>thanks for the movie but video quelity is rather poor</span>
+                </div>
+        
+                <span>1</span>
+                <i class="bi bi-heart"></i>
+            </div>
+        </div>
+        <div class="card comment mt-1  justify-content-center ">
+            <div class="d-flex justify-content-around  ">
+                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
+                <div class="d-flex flex-column">
+                    <span>grancabeza December 26, 2023 at 02:59 am</span>
+                    <span>thanks for the movie but video quelity is rather poor</span>
+                </div>
+        
+                <span>1</span>
+                <i class="bi bi-heart"></i>
+            </div>
+        </div>
+        <div class="card comment mt-1  justify-content-center ">
+            <div class="d-flex justify-content-around  ">
+                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
+                <div class="d-flex flex-column">
+                    <span>grancabeza December 26, 2023 at 02:59 am</span>
+                    <span>thanks for the movie but video quelity is rather poor</span>
+                </div>
+        
+                <span>1</span>
+                <i class="bi bi-heart"></i>
+            </div>
+        </div>
+        <div class="card comment mt-1  justify-content-center ">
+            <div class="d-flex justify-content-around  ">
+                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
+                <div class="d-flex flex-column">
+                    <span>grancabeza December 26, 2023 at 02:59 am</span>
+                    <span>thanks for the movie but video quelity is rather poor</span>
+                </div>
+        
+                <span>1</span>
+                <i class="bi bi-heart"></i>
+            </div>
+        </div>
+        <button class="btn btn-dark mt-1 w-100 py-3">
+            Login to leave a comment
+        </button>
+       </div>
+    <div class="col-lg-6">
+        <h3 class="mb-5"><i class="bi bi-star-fill"></i>&nbsp;Movie Reviews</h3>
+        <div class="review border-bottom pb-4">
+            <span>Reviewed by Seth_Rogue_One <i class="bi bi-star-fill"></i> 7 / 10</span>
+            <h4 class="py-3">More of a supernatural drama than a full on scare horror</h4>
+            <article>Decent movie, it has a couple flaws in the script (which I can't really point out without
+                 spoiling stuff so I won't bother doing that) but the resolution was brilliant and Kate Bosworth
+                  pulled one of her better performances as of late so it's well worth seeing.
+            
+            If you are looking for a horror movie to have you by the edge of the seat the whole time,\
+             this is probably the wrong movie to pick but if you want to see something original
+              (as far as horror's</article>
+        </div>
+        <div class="review border-bottom my-4 pb-4">
+            <span>Reviewed by Seth_Rogue_One <i class="bi bi-star-fill"></i> 7 / 10</span>
+            <h4 class="py-3">More of a supernatural drama than a full on scare horror</h4>
+            <article>Decent movie, it has a couple flaws in the script (which I can't really point out without
+                spoiling stuff so I won't bother doing that) but the resolution was brilliant and Kate Bosworth
+                pulled one of her better performances as of late so it's well worth seeing.
+        
+                If you are looking for a horror movie to have you by the edge of the seat the whole time,\
+                this is probably the wrong movie to pick but if you want to see something original
+                (as far as horror's</article>
+        </div>
+    </div>
+    </div>
+</div>

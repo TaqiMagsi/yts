@@ -13,6 +13,9 @@ import { UltraHDComponent } from './shared/ultra-hd/ultra-hd.component';
 import { TrendingComponent } from './shared/trending/trending.component';
 import { BrowsemoviesComponent } from './shared/browsemovies/browsemovies.component';
 import { SitelayoutComponent } from './layout/sitelayout/sitelayout.component';
+import { DetailsComponent } from './shared/details/details.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +29,13 @@ import { SitelayoutComponent } from './layout/sitelayout/sitelayout.component';
     UltraHDComponent,
     TrendingComponent,
     BrowsemoviesComponent,
-    SitelayoutComponent
+    SitelayoutComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

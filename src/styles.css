@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: black;
+   /*  background:url("https://img.yts.mx/assets/images/movies/thanksgiving_2023/background.jpg")no-repeat 
+    center center; */
+    background-size: cover;
+    background-color: #1d1d1d;
+    color: white;
 }
-
+#background-image {
+    top: 60px;
+    height: 580px;
+    z-index: 1;
+}
 .bg-green{
 background-color: green;
 }
