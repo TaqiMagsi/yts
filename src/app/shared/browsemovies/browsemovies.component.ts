@@ -7,14 +7,20 @@ import { ServiceService } from 'src/app/auth/service.service';
   styleUrls: ['./browsemovies.component.css']
 })
 export class BrowsemoviesComponent {
-
-  constructor(private http: ServiceService) { }
+  data: any = [];
+  constructor(private serviceService: ServiceService) {
+    
+  }
+  
   ngOnInit() {
-    this.getData()
-  }
-  getData() {
-    let data = this.http.getdata();
-    console.log(data);
+    this.getmovies();
   }
 
+  getmovies() {
+    this.serviceService.getMoviesData().subscribe((d: any) => {
+      this.data = d;
+       
+    })
+  }
+    
 }
