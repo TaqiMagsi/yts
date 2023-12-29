@@ -9,7 +9,15 @@ export class ServiceService {
   responseData: any = [];
   constructor(private http: HttpClient) {}
 
-getMoviesData(){
-    return this.http.get(`https://yts.mx/api/v2/list_movies.json`)
+  getMoviesData(search:any,quality:any){
+    return this.http.get(`https://yts.mx/api/v2/list_movies.json?query_term=${search}&quality=${quality}`)
   }
+  getMoviesbyQuality(quality: any) {
+   
+    return this.http.get(`https://yts.mx/api/v2/list_movies.json?query_term=${quality}`)
+  }
+  getMovieDetails(movie_id:any) {
+    return this.http.get(`https://yts.mx/api/v2/movie_details.json?movie_id=${movie_id}`);
+  }
+
 }

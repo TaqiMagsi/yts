@@ -5,6 +5,8 @@ body{
     background-size: cover;
     background-color: #1d1d1d;
     color: white;
+    font-family: Arimo,Arial,Helvetica,'Lucida Grande',sans-serif;
+    
 }
 #background-image {
     top: 60px;

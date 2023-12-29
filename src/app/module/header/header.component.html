@@ -2,7 +2,7 @@
 
     <div class="container-fluid  ">
 
-   <img class="yts navbar-brand" src="/assets/image/YTS.png" >
+   <img class="yts navbar-brand" src="https://yts.mx/assets/images/website/logo-YTS.svg" >
    <span class="heading d-none d-xl-block" >HD movies at the smallest file size.</span>
    <div class="search d-md-block d-none  d-lg-none py-1 rounded-pill border pe-3">
     <i style="font-size:10px ;color: #919191;" class="px-2 bi-search"></i>
@@ -19,10 +19,10 @@
                 <input type="text" class=" bg-dark" placeholder="Quick search" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </li>
-        <li class="px-2 nav-item text-justify" >Home</li>
+        <a  [routerLink]="['/home']" ><li class="px-2 nav-item text-justify">Home</li></a>
         <li class="px-2 nav-item" style="color: green;">4K</li>
         <li class="px-2 nav-item">Trending</li>
-        <li class="px-2 nav-item">Browse Movies</li>
+        <a  [routerLink]="['/browswmovies']"><li class="px-2 nav-item">Browse Movies</li></a>
         <li class="px-2 nav-item" style="color: aliceblue;">Login</li>
         <li class="px-2 nav-item" style="color: aliceblue;">Register</li>    
     </ul>

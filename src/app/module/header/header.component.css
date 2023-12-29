@@ -1,6 +1,6 @@
 .yts{
-    width: 100px;
-    height: 50px;
+    width: 127px;
+    height: 40px;
 }
 li{
     color: white;
@@ -34,3 +34,16 @@ input:focus-visible{
     margin-left: 5px;
     margin-top: 5px;
 } */
+.caption{
+    cursor: pointer !important;
+}
+.caption:hover{
+    color: #919191;
+}
+.caplabel{
+    font-size: .85em;
+    color: #919191 !important;
+}
+a{
+    text-decoration: none;
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from 'src/app/auth/service.service';
 
 @Component({
   selector: 'app-details',
@@ -6,13 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-   
-  
-    data: MovieDetails=
-    { name: "Thanks Giving", year: 2003, rating: 7.5, image: "https://img.yts.mx/assets/images/movies/thanksgiving_2023/medium-cover.jpg", genre: "Action/Horror" };
+  movie_id: any;
+  data2: any;
+  constructor(private serviceService: ServiceService, private router: ActivatedRoute) {
+    this.router.params.subscribe(params => {
+      this.movie_id = params['id'];
+      console.log('Test ID:', this.movie_id);
+    });
+  }
 
-  
+  ngOnInit() {  
+    this.getmoviesDetails();
+  }
 
+  getmoviesDetails() {
+    this.serviceService.getMovieDetails(this.movie_id).subscribe((d: any) => {
+      this.data2 = d;
+      console.log(this.data2)
+    })
+  }     
 }
 
 export interface MovieDetails{

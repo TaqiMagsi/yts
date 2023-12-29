@@ -8,6 +8,7 @@ import { ServiceService } from 'src/app/auth/service.service';
 })
 export class HomeComponent {
   data2: any ;
+  search: any="";
   constructor(private serviceService: ServiceService) {
 
   }
@@ -17,9 +18,9 @@ export class HomeComponent {
   }
 
   getmovies() {
-    this.serviceService.getMoviesData().subscribe((d: any) => {
+    this.serviceService.getMoviesData(this.search).subscribe((d: any) => {
       this.data2 = d;
-       console.log(this.data2)
+      console.log(this.data2);
     })
   }
   /* data: Array<MovieCard> = [
