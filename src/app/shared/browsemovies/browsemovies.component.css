@@ -20,3 +20,62 @@ select{
     padding-left: 10px;
     height: 40px;
 }
+
+.card{
+    height: 325px;
+    
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+.card-overlay{
+position: absolute;
+display: none !important;
+
+}
+
+.card:hover{
+    border: solid;
+    border-width: 5px;
+    border-color: green;
+}
+.card:hover>.card-overlay{
+   display: block !important; 
+   background-color: rgba(0, 0, 0, 0.684);
+   width: 100%;
+   height: 100%;
+}
+button:hover{
+    display: block !important;
+   background-color: rgb(6, 110, 6);
+}
+h4{
+    color: white;
+}
+.caption{
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+.caption:hover{
+    color: #919191;
+    
+}
+.caplabel{
+    color:#919191;
+    font-size: .85em;
+}
+h5{
+    color: white;
+}

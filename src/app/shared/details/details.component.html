@@ -1,4 +1,4 @@
-<div class="container justify-content-center">
+<div class="container ">
    
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
@@ -9,63 +9,62 @@
     <div class="row ">
         <div class="col-6">
             <div class="d-block  d-md-none">
-                <h6 class="mb-4">{{data.name}}</h6>
-                <h6 class="mb-0">{{data.year}}</h6>
-                <h6>{{data.year}}</h6>
+                <h6 class="mb-4">{{data2?.name}}</h6>
+                <h6 class="mb-0">{{data2?.year}}</h6>
+                <h6>{{data2?.year}}</h6>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-5">
             
             <div class="card">
-                <img [src]="data.image" alt="">
+                <img class="poster" [src]="data2?.data.movie?.medium_cover_image" alt="">
             </div>
             <div class="d-flex flex-column">
-                <button class="btn btn-success d-none d-lg-block rounded-1 my-2 "><i class="downloadIcon bi-download"></i>&nbsp;&nbsp;Download</button>
-                <button class="btn btn-primary rounded-1  my-1 ">Watch Now</button>
+                <button class="btn btn-success d-none d-lg-block border-0 py-2 rounded-1 mt-2 "><i class="downloadIcon bi-download"></i>&nbsp;&nbsp;Download</button>
+                <button class="btn btn-primary rounded-1 border-0 py-2 mt-2 ">Watch Now</button>
             </div>
         </div>
-        <div class="col-6 col-lg-5 col-md  mx-lg-5">
+        <div class="col-6 col-lg-4 col-md   mx-lg-5">
             <div class="d-none d-md-block">
-                <h1 class="mb-4">{{data.name}}</h1>
-                <h4 class="mb-0">{{data.year}}</h4>
-                <h4>{{data.genre}}</h4>
+                <h1 class="title mb-4">{{data2.data.movie.title}}</h1>
+                <h4 class="year mb-0">{{data2.data.movie.year}}</h4>
+                <h4 class="genre mb">{{data2.data.movie.genres}}</h4>
             </div>
-            <div class="d-none d-lg-block">
-                <i  class="d-none d-lg-inline avail">Available in: </i>
-                <button class="btn btn-outline-light rounded-1 size-btn py-0">720.WEB</button>
-                <button class="btn btn-outline-light rounded-1 mx-2 size-btn py-0">1080.WEB</button>
+            <div class="d-none d-lg-block mt-4 ">
+                <em class="d-none d-lg-inline avail">Available in: </em>
+                <button class="custombtn  rounded-1 ">720p.WEB</button>
+                <button class="custombtn mx-1 rounded-1 ">1080.WEB</button>
             </div>
             <div class="d-flex flex-column">
-                <div class="d-none d-lg-block">
-                    <span class="details">1080px265: 36%</span>
+                <div class="d-none d-lg-block ">
                     <span class="details">WEB: same quality as BluRay</span>
-                    <span class="details">BluRay estimated release date: <span>February 27,2024</span></span>
+                    
                 </div>
-                <div class="d-flex my-4 ">
-                   <i class="downloadIcon_2 d-none d-lg-block bi-download"></i>
-                   <h4 class="d-none d-lg-block">&nbsp;Subtitle Requested</h4>
+                <div class=" my-4 ">
+                   
+                   <button class="custombtn rounded-1"><i class="downloadIcon_2  d-none d-lg-inline bi-download"></i>&nbsp;Request Subtitles</button>
                 </div>
                 <div>
                     <div class="d-flex">
                         <i style="width: 75px;" class="bi bi-heart-fill"></i>
-                        <h4 class="m-0">8</h4>
+                        <h4 class="likes m-0">{{data2.data.movie.like_count}}</h4>
                         
                     </div>
                     <div class="d-flex  align-items-end">
                         <span style="width: 75px;"><img class="Icon" src="https://yts.mx/assets/images/website/rt-certified-fresh.svg" alt=""></span>
-                        <h4 class="m-0">91%</h4>
+                        <h4 class="likes m-0">91%</h4>
                         <span class="details_1 d-none d-md-block">&nbsp;TOMATOMETER · 141 reviews</span>
                     </div>
                     <div class="d-flex py-2 align-items-end">
                         <span style="width: 75px;"><img class="Icon" src="https://yts.mx/assets/images/website/rt-upright.svg"></span>
-                        <h4 class=" m-0">68%</h4>
+                        <h4 class=" likes m-0">68%</h4>
                         <span class="details_1 d-none d-md-block">&nbsp;AUDIENCE</span>
                     </div>
                     <div class="d-flex m-0 align-items-end">
                         <span style="width: 75px;"><img   src="https://yts.mx/assets/images/website/logo-imdb.svg" alt=""></span>
-                        <h4 class=" m-0">{{data.rating}}</h4><span class="details_1">/10</span>&nbsp;&nbsp;<i class="bi bi-star-fill"></i><span class="details_1">16.1k</span>
+                        <h4 class=" likes m-0">{{data2.data.movie.rating}}</h4><span class="details_1">/10</span>&nbsp;&nbsp;<i class="bi bi-star-fill"></i><span class="details_1">16.1k</span>
                     </div>
                     <div class="d-flex flex-column gap-2  d-lg-none d-md-block">
                         <i class="d-none d-lg-inline avail">Available in: </i>
@@ -75,15 +74,12 @@
                 </div>
             </div>
         </div> 
-        <div class="col d-none d-lg-block">
-             <h5>Similer Movies</h5>
-             <div class="d-flex mb-3 gap-3" >
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg" >
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
-             </div>
-             <div class="d-flex gap-3">
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
+        <div  class="col-lg-3 d-none d-lg-block  ">
+             <p class="similer">Similer Movies</p>
+             <div *ngFor="let movie of suggestions.data.movies" class=" d-inline-block p-2  " >
+                <a [routerLink]="['/details/' + movie.id ]" (click)="getSuggestions(movie.id)">
+                    <img class="similerimage" [src]="movie.medium_cover_image">
+                </a>
              </div>
         </div>
     </div>
@@ -100,59 +96,44 @@
     </div>
     <div class="row my-4">
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image1">
         </div>
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image2">
         </div>
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot3.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image3">
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12 col-md-6">
-           <h3>Plot summary</h3>
-           <p>A tormented father witnesses his young son die when caught in a gang's crossfire on Christmas Eve. 
-            While recovering from a wound that costs him his voice, he makes vengeance his life's mission and
-             embarks on a punishing training regimen in order to avenge his son's death.
+           <h3 style="font-size: 1.25em;font-weight: 700;">Plot summary</h3>
+           <p class="mt-4" style="color: #919191;line-height: 24px;">Hapless family man Paul Matthews finds his life turned upside down when millions of strangers suddenly start seeing him in their dreams. But when his
+             nighttime appearances take a nightmarish turn, Paul is forced to navigate his newfound stardom.
             </p>
-            <p >
+            <p class="mt-4" style="color: #919191;line-height: 24px;" >
                 <br>
                 <em class="d-block">Uploaded by: FREEMAN</em>
-                <span>December 22, 2023 at 10:52 PM</span>
+                <em>December 22, 2023 at 10:52 PM</em>
             </p>
         </div> 
         <div class="col-lg-4 col-md-6">
-           <h3>Director</h3>
-           <div class="cast-list border-bottom pb-2 mb-5 ">
+           <h3 style="font-size: 1.25em;font-weight: 700;">Director</h3>
+           <div class="cast-list  pb-2 mb-5 ">
                <img class="director" src="https://img.yts.mx/assets/images/actors/thumb/nm0000247.jpg">
-               <span class="px-3">John woo</span>
+               <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">John woo</span>
            </div>
-           <h3>Top cast</h3>
-           <div class="top-cast">
-              <div class="actor border-bottom pb-2 my-2">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
-                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
+           <h3 class="mb-4" style="font-size: 1.25em;font-weight: 700;">Top cast</h3>
+              <div *ngFor="let cast of data2.data.movie.cast" class="cast-list pb-2 my-2" style="font-size: .9em;">
+                <img class="director " [src]="cast.url_small_image">
+                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">{{cast.name}}</span>as {{cast.character_name}}
               </div>
-            <div class="actor border-bottom pb-2 my-2">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
-                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
-            </div>
-            <div class="actor border-bottom pb-2 my-2">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
-                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
-            </div>
-            <div class="actor border-bottom pb-2 my-2">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
-                <span class="px-3">Joel Kinnaman as Brian Godlock</span>
-            </div>
-           </div>
         </div>
     </div>
     <div class="row my-5">
         <div class="col-lg-10">
             <div class="d-flex align-items-center">
-                <h3 >Tech specs</h3>
+                <h3 style="font-size: 1.15em;font-weight: 700;" >Tech specs</h3>
                 <nav class="nav nav-tabs px-5 mx-5 border-0 " id="nav-tab" role="tablist">
                     <button class="nav-link active  " id="nav-720-tab" data-bs-toggle="tab"
                      data-bs-target="#nav-720" 
@@ -170,16 +151,16 @@
                             <table class="table ">
                                 <tbody>
                                     <tr>
-                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;985.62 MB</td>
-                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1280*694</td>
-                                        <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English 2.0</td>
-                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;R</td>
+                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;{{data2.data.movie.torrents[0].size}}</td>
+                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1280*536</td>
+                                        <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English </td>
+                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;{{data2.data.movie.mpa_rating}}</td>
                                     </tr>
                                     <tr>
                                         <td  style="color:#0dd67f;font-weight: 700;"><i class="bi bi-badge-cc-fill"></i>&nbsp;&nbsp;Subtitles</td>
                                         <td><i class="bi bi-film"></i>&nbsp;&nbsp;23.976 fps</td>
-                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;1 hr 41 min</td>
-                                        <td style="font-weight: 700;">Seeds</td>
+                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;{{data2.data.movie.runtime}}min</td>
+                                        <td style="font-weight: 700;">Seeds <span  style="color: rgb(0, 168, 0);font-weight:100 !important;font-size: .9em;">100+</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -191,15 +172,15 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;1.88 GB</td>
-                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1920*1040</td>
+                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;{{data2?.data?.movie?.torrents[1]?.size}}</td>
+                                        <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1920*804</td>
                                         <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English 2.0</td>
-                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;R</td>
+                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;{{data2?.data?.movie?.mpa_rating}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color:#0dd67f;font-weight: 700;"><i class="bi bi-badge-cc-fill"></i>&nbsp;&nbsp;Subtitles</td>
                                         <td><i class="bi bi-film"></i>&nbsp;&nbsp;23.976 fps</td>
-                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;1 hr 41 min</td>
+                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;{{data2?.data?.movie?.runtime}}min</td>
                                         <td style="font-weight: 700;">Seeds</td>
                                     </tr>
                                 </tbody>
@@ -212,77 +193,35 @@
     </div>
     <div class="row d-flex flex-column-reverse flex-lg-row ">
        <div class="col-lg-6">
-        <h3><i class="bi bi-chat-left-fill"></i>&nbsp;&nbsp;32 Comments</h3>
+        <h3 style="font-size: 1.25em;font-weight: 700;"><i class="bi bi-chat-left-fill"></i>&nbsp;&nbsp;32 Comments</h3>
         <div class="card comment mt-5  justify-content-center ">
-            <div class="d-flex justify-content-around  ">
+            <div class="d-flex p-2 justify-content-around align-items-center" >
                 <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
-                <div class="d-flex flex-column">
-                    <span>grancabeza December 26, 2023 at 02:59 am</span>
-                    <span>thanks for the movie but video quelity is rather poor</span>
-                </div>
                 
-                <span>0</span>
-                <i class="bi bi-heart"></i>
+                    <div class="d-flex  ">
+                        <span style="color:#919191;font-weight: 700;font-size: .9em;">grancabeza&nbsp;</span>
+                         <span style="color:#919191;font-size: .9em;"> December 26, 2023 at 02:59 am</span>
+                    </div>
+                    <span>0</span>
+                    <i class="bi bi-heart"></i>
             </div>
+                <p class="comment-paragraph"  style="font-size: .9em;">Hahahah, the fart and the premature finish, 
+                    beautiful. Also, I love how Cage played his character and I love the plot of the movie.
+                    It's very realistic. Just like Jordan Peterson, they tried to cancel him based on their
+                     dreams and not reality.r</p>
         </div>
-        <div class="card comment mt-1  justify-content-center ">
-            <div class="d-flex justify-content-around  ">
-                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
-                <div class="d-flex flex-column">
-                    <span>grancabeza December 26, 2023 at 02:59 am</span>
-                    <span>thanks for the movie but video quelity is rather poor</span>
-                </div>
-        
-                <span>1</span>
-                <i class="bi bi-heart"></i>
-            </div>
-        </div>
-        <div class="card comment mt-1  justify-content-center ">
-            <div class="d-flex justify-content-around  ">
-                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
-                <div class="d-flex flex-column">
-                    <span>grancabeza December 26, 2023 at 02:59 am</span>
-                    <span>thanks for the movie but video quelity is rather poor</span>
-                </div>
-        
-                <span>1</span>
-                <i class="bi bi-heart"></i>
-            </div>
-        </div>
-        <div class="card comment mt-1  justify-content-center ">
-            <div class="d-flex justify-content-around  ">
-                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
-                <div class="d-flex flex-column">
-                    <span>grancabeza December 26, 2023 at 02:59 am</span>
-                    <span>thanks for the movie but video quelity is rather poor</span>
-                </div>
-        
-                <span>1</span>
-                <i class="bi bi-heart"></i>
-            </div>
-        </div>
-        <div class="card comment mt-1  justify-content-center ">
-            <div class="d-flex justify-content-around  ">
-                <img class="director" src="https://img.yts.mx/assets/images/users/thumb/default_avatar.jpg" alt="">
-                <div class="d-flex flex-column">
-                    <span>grancabeza December 26, 2023 at 02:59 am</span>
-                    <span>thanks for the movie but video quelity is rather poor</span>
-                </div>
-        
-                <span>1</span>
-                <i class="bi bi-heart"></i>
-            </div>
-        </div>
-        <button class="btn btn-dark mt-1 w-100 py-3">
+        <button class="btn btn-dark mt-1 w-100 py-4 border-0" style="background-color: #171717 !important;font-weight: 700;">
             Login to leave a comment
         </button>
        </div>
     <div class="col-lg-6">
-        <h3 class="mb-5"><i class="bi bi-star-fill"></i>&nbsp;Movie Reviews</h3>
-        <div class="review border-bottom pb-4">
-            <span>Reviewed by Seth_Rogue_One <i class="bi bi-star-fill"></i> 7 / 10</span>
-            <h4 class="py-3">More of a supernatural drama than a full on scare horror</h4>
-            <article>Decent movie, it has a couple flaws in the script (which I can't really point out without
+        <h3  style="font-size: 1.25em;font-weight: 700;" class="mb-5"><i class="bi bi-star-fill"></i>&nbsp;Movie Reviews</h3>
+        <div class="review  pb-4">
+            <div class="d-flex align-items-center">
+                <div style="color: #717171;;font-size: .9em;">Reviewed by&nbsp;</div><span style="color: #919191; font-weight: 700;">Seth_Rogue_One&nbsp;</span><i class="bi bi-star-fill"></i><span style="font-weight: 700;">&nbsp; 7 / 10</span>
+            </div>
+            <h4 style="font-size: .9em;font-weight: 700;color: #bababa;" class="py-3">More of a supernatural drama than a full on scare horror</h4>
+            <article style="color: #919191;font-size: .9em;">Decent movie, it has a couple flaws in the script (which I can't really point out without
                  spoiling stuff so I won't bother doing that) but the resolution was brilliant and Kate Bosworth
                   pulled one of her better performances as of late so it's well worth seeing.
             
@@ -290,17 +229,7 @@
              this is probably the wrong movie to pick but if you want to see something original
               (as far as horror's</article>
         </div>
-        <div class="review border-bottom my-4 pb-4">
-            <span>Reviewed by Seth_Rogue_One <i class="bi bi-star-fill"></i> 7 / 10</span>
-            <h4 class="py-3">More of a supernatural drama than a full on scare horror</h4>
-            <article>Decent movie, it has a couple flaws in the script (which I can't really point out without
-                spoiling stuff so I won't bother doing that) but the resolution was brilliant and Kate Bosworth
-                pulled one of her better performances as of late so it's well worth seeing.
-        
-                If you are looking for a horror movie to have you by the edge of the seat the whole time,\
-                this is probably the wrong movie to pick but if you want to see something original
-                (as far as horror's</article>
-        </div>
     </div>
     </div>
 </div>
+<router-outlet></router-outlet>

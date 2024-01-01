@@ -14,7 +14,9 @@ img{
     object-fit: cover;
     display: block;
 }
-
+a{
+    text-decoration: none;
+}
 .card-overlay{
 position: absolute;
 display: none !important;
@@ -41,11 +43,16 @@ h4{
 }
 .caption{
     color: white;
+    cursor: pointer;
     font-weight: 500;
 }
+.caption:hover{
+    color: #919191;
+    
+}
 .caplabel{
-    color: white;
-    font-weight: 200;
+    color:#919191;
+    font-size: .85em;
 }
 h5{
     color: white;

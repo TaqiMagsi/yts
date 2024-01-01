@@ -1,7 +1,7 @@
 <div class="container ">
     <div class="row justify-content-center align-items-center row-cols-2 row-cols-md-3 gx-5 row-cols-lg-5 gx-xl-5 gx-lg-3 gx-md-5 gap-lg-1">
         <div *ngFor="let movie of data2.data.movies" class="col py-2 my-2 hv-auto">
-            <!-- <a href="#"> -->
+             <a [routerLink]="['/details/' + movie.id ]"> 
                 <div class="card" > 
                     <img class="img-fluid object-fit-cover" [src]="movie.large_cover_image">
                         <div class="card-overlay ">
@@ -9,19 +9,24 @@
                                <h4 class="star "><i class="text-green bi bi-star-fill" ></i></h4>
                                 <h4>{{movie.rating | number:'1.0-1'}}/10</h4>
                                 <h4 class="mt-3">{{movie.bio}}</h4>
-                                <h5>{{movie.genres}}</h5>
+                               <div *ngFor="let gen of movie.genres">
+                                <h5 class="mb-0">{{gen}}</h5>
+                                </div> 
                                 <button class="btn  mt-3 bg-green text-white">View Details</button>
                             </div>
                         </div>
                 </div>
-            <!-- </a> -->
-               <div class="caption">
-                   {{movie.title}}
-               </div>
-               <label class="caplabel">{{movie.year}}</label>  
+            </a> 
+              <a href="">
+                <div class="caption">
+                    {{movie.title}}
+                </div>
+              </a>
+               
+               <label class="caplabel ">{{movie.year}}</label>  
         </div>
        
     </div>
     
 </div>
-
+<router-outlet></router-outlet>

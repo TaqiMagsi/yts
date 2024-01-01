@@ -2,7 +2,7 @@
 
     <div class="container-fluid  ">
 
-   <img class="yts navbar-brand" src="/assets/image/YTS.png" >
+  <a  [routerLink]="['/home']"> <img class="yts navbar-brand" src="https://yts.mx/assets/images/website/logo-YTS.svg"></a>
    <span class="heading d-none d-xl-block" >HD movies at the smallest file size.</span>
    <div class="search d-md-block d-none  d-lg-none py-1 rounded-pill border pe-3">
     <i style="font-size:10px ;color: #919191;" class="px-2 bi-search"></i>
@@ -11,22 +11,84 @@
    <button class="navbar-toggler bg-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-   <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav" >
+   <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
     <ul class="navbar-nav d-flex align-items-center justify-content-center px-lg-0 px-3">
         <li class="px-2 d-block d-md-none d-lg-block ">
             <div class=" search py-1 rounded-pill border pe-3">
                 <i style="font-size:10px ;color: #919191;" class="px-2 bi-search"></i>
-                <input type="text" class=" bg-dark" placeholder="Quick search" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="moviesearch bg-dark text-white" placeholder="Quick search"  [(ngModel)]="search"  (input)=" getmovies()" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div *ngIf="data2" class="search-option border-0 d-flex flex-column"  >
+            <!-- <div *ngIf="data2.length === 0">Not Found</div> -->
+               
+                    <div *ngFor="let movie of data2" class="search-detail  p-2 ">
+                        <a class="d-flex flex-row" [routerLink]="['/details/' + movie.id ]">
+                        <img class="movies-cover" [src]="movie.large_cover_image">
+                        <div class="d-flex flex-column mx-3">
+                            <span style="font-size: 12px;color: white !important;">{{movie.title}}</span>
+                            <span style="font-size: 12px;color: #919191 !important;">{{movie.year}}</span>
+                        </div>
+                        </a>
+                    </div>
+               
             </div>
         </li>
-        <li class="px-2 nav-item text-justify" >Home</li>
-        <li class="px-2 nav-item" style="color: green;">4K</li>
-        <li class="px-2 nav-item">Trending</li>
-        <li class="px-2 nav-item">Browse Movies</li>
-        <li class="px-2 nav-item" style="color: aliceblue;">Login</li>
-        <li class="px-2 nav-item" style="color: aliceblue;">Register</li>    
+       <li class="px-2 nav-item  text-justify"><a [routerLink]="['/home']" class="text-white">Home</a></li>
+        <li class="px-2 nav-item " style="color: green;"><a [routerLink]="['/home']" class="text-white">4K</a></li>
+        <li class="px-2 nav-item "><a [routerLink]="['/home']" class="text-white">Trending</a></li>
+        <li class="px-2 nav-item "><a [routerLink]="['/browswmovies']" class="text-white">Browse Movies</a></li>
+        <li class="px-2 nav-item " style="color: aliceblue !important;">
+            <a type="button" 
+            data-bs-toggle="modal" data-bs-target="#login" >Login</a>
+        </li>
+        <div class="modal " id="login" tabindex="-1" aria-labelledby="loginModal" area-hidden="true">
+         <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" style="color: green;" id="loginModal">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex flex-column">
+                        <input class="modal-input mb-4  rounded-1 " type="text" placeholder="Username or Email">
+                        <input class="modal-input   rounded-1 " type="text" placeholder="Password">
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button style="width: 100%;" type="button" class="btn btn-success rounded-1 mb-3 py-2" data-bs-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>    
+        </div>
+        <li class="px-2 nav-item " style="color: aliceblue !important;"><a type="button" data-bs-toggle="modal"
+             data-bs-target="#registeration">Register</a></li>  
+        <div class="modal " id="registeration" tabindex="-1" aria-labelledby="registrationModal" area-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" style="color: green;" id="registrationModal">Registration</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+                    <div class="modal-body ">
+                        <div class="d-flex flex-column ">
+                            <input class="modal-input mb-4   " type="text" placeholder="Username">
+                            <input class="modal-input mb-4   " type="text" placeholder="Email">
+                            <input class="modal-input mb-4   " type="text" placeholder="Password">
+                            <input class="modal-input mb-4   " type="text" placeholder="Confirm Password">
+                            <div class="d-flex justify-content-center"><i style="color:#666666;font-size: 10px;">By clicking Register, you agree to our<a> Terms and Conditions</a> </i></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button style="width: 100%;" type="button" class="btn btn-success rounded-1 py-2" aria-label="closed" data-bs-dismiss="modal">Registeration</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ul>
    </div>
 </div>
+
 </nav>
 

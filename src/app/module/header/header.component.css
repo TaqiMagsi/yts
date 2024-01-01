@@ -1,6 +1,6 @@
 .yts{
-    width: 100px;
-    height: 50px;
+    width: 127px;
+    height: 40px;
 }
 li{
     color: white;
@@ -15,7 +15,7 @@ li{
     font-size: 1.2em;
     color:#919191;
 }
-input{
+.moviesearch{
     color: #919191;
      font-weight: 500;
     border-radius: 1px;
@@ -26,7 +26,7 @@ border: none;
 .search{
     border: 1px solid #919191 !important;
 }
-input:focus-visible{
+.moviesearch:focus-visible{
     outline: none;
 }
 /* .bi-search{
@@ -34,3 +34,46 @@ input:focus-visible{
     margin-left: 5px;
     margin-top: 5px;
 } */
+.caption{
+    cursor: pointer !important;
+}
+.caption:hover{
+    color: #919191;
+}
+.caplabel{
+    font-size: .85em;
+    color: #919191 !important;
+}
+a{
+    text-decoration: none;
+}
+.search-option{
+    position: absolute;
+    width: 248px;
+    height: auto;
+    border: 1px solid white;
+    top: 56px;
+    background-color: #1d1d1d;
+   
+}
+.search-detail{
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      height: auto;
+}
+.search-detail:hover{
+    background-color: #9191914b;
+}
+.movies-cover{
+    width: 43px;
+    height: 63px;
+}
+a{
+    text-decoration: none;
+
+}
+.modal-input{
+    font-size: 12px;
+    padding: 12px 0px;
+    padding-left: 30px;
+    border: 1px solid #d2d8d8;
+};
