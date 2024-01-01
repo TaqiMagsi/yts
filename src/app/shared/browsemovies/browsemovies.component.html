@@ -5,13 +5,13 @@
             <h4>Search Term: </h4>
             <div class="d-flex gap-4 ">
                 <input type="text" class="p-2 rounded-1 border-0 w-75"  [(ngModel)]="search"   >
-                <button class="btn btn-success fw-bold rounded-1 px-4 py-2" (click)=" getmoviesbyquality()" >Search</button>
+                <button class="btn btn-success fw-bold rounded-1 px-4 py-2" (click)=" getmovies()" >Search</button>
             </div>
         </div>
             <div class="d-flex gap-3">
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Quality:</span>
-                    <select class="rounded-1" [(ngModel)]="qualityselected" >
+                    <select class="rounded-1" [(ngModel)]="qualitySelected" >
                         <option *ngFor="let option of quality" [ngValue]="option" >
                                {{option}}
                         </option>
@@ -19,69 +19,55 @@
                 </div>
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Genre:</span>
-                    <select class="rounded-1">
-                        <option selected>All</option>
-                        <option value="1">Action</option>
-                        <option value="2">Adventure</option>
-                        <option value="3">Drama</option>
-                        <option value="4">crime</option>
-                        <option value="5">Romance</option>
+                    <select class="rounded-1" [(ngModel)]="genre">
+                        <option *ngFor="let option of movieGenres" [ngValue]="option">
+                            {{option}}
+                        </option>
                     </select>
                 </div>
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Rating:</span>
-                    <select class="rounded-1">
-                        <option selected>All</option>
-                        <option value="1">9+</option>
-                        <option value="2">8+</option>
-                        <option value="3">7+</option>
-                        <option value="4">6+</option>
-                        <option value="5">5+</option>
-                        <option value="6">4+</option>
-                        <option value="7">3+</option>
-                        <option value="8">2+</option>
-                        <option value="9">1+</option>
-                        
+                    <select class="rounded-1" [(ngModel)]="rating">
+                        <option *ngFor="let option of movieRatings" [ngValue]="option">
+                            {{option}}
+                        </option>
                     </select>
                 </div>
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Year:</span>
-                    <select class="rounded-1">
-                        <option selected>All</option>
-                        <option value="1">2023</option>
-                        <option value="2">2022</option>
-                        <option value="4">2020-now</option>
-                        <option value="5">2010-now</option>
-                        <option value="6">2010-2019</option>
-                        <option value="7">2000-2009</option>
+                    <select class="rounded-1" [(ngModel)]="year">
+                        <option *ngFor="let option of movieYear" [ngValue]="option">
+                            {{option}}
+                        </option>
                     </select>
                 </div>
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Language:</span>
-                    <select class="rounded-1">
-                        <option selected>All</option>
-                        <option value="1">English</option>
-                        <option value="2">Foreign</option>
-                        <option value="3">French</option>
+                    <select class="rounded-1" [(ngModel)]="language">
+                        <option *ngFor="let option of movieLanguage" [ngValue]="option">
+                            {{option}}
+                        </option>
                     </select>
                 </div>
                 <div class="d-inline-flex flex-column">
                     <span class="py-2">Order By:</span>
-                    <select class="rounded-1">
-                        <option selected>Latest</option>
-                        <option value="1">Ordered</option>
-                        <option value="2">Featured</option>
-                        <option value="3">Seeds</option>
+                    <select class="rounded-1" [(ngModel)]="order">
+                        <option *ngFor="let option of movieOrder" [ngValue]="option">
+                            {{option}}
+                        </option>
                     </select>
                 </div>
             </div>
         </div>
         </div>
 </div>
-<div class="container ">
+<div class="container py-5">
+    <div class="d-flex justify-content-center align-items-center ">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
     <div class="row justify-content-center align-items-center row-cols-2 row-cols-md-3 gx-5 row-cols-lg-5 gx-xl-5 gx-lg-3 gx-md-5 gap-lg-1">
-        <div *ngFor="let movie of data2.data.movies" class="col py-2 my-2 hv-auto">
-            <a [routerLink]="['/details']">
+        <div *ngFor="let movie of data2.data.movies | paginate: { itemsPerPage:5, currentPage: p }" class="col py-2 my-2 hv-auto">
+            <a [routerLink]="['/details/' + movie.id]">
                 <div class="card">
                     <img class="img-fluid object-fit-cover" [src]="movie.large_cover_image">
                     <div class="card-overlay ">
@@ -89,7 +75,9 @@
                             <h4 class="star "><i class="text-green bi bi-star-fill"></i></h4>
                             <h4>{{movie.rating | number:'1.0-1'}}/10</h4>
                             <h4 class="mt-3">{{movie.bio}}</h4>
-                            <h5>{{movie.genres}}</h5>
+                            <div *ngFor="let gen of movie.genres">
+                                <h5 class="mb-0">{{gen}}</h5>
+                            </div>
                             <button class="btn  mt-3 bg-green text-white">View Details</button>
                         </div>
                     </div>
@@ -105,6 +93,8 @@
         </div>
 
     </div>
-
+<div class="d-flex justify-content-center align-items-center ">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>    
 </div>
 <router-outlet></router-outlet>

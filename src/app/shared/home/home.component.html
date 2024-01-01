@@ -1,7 +1,7 @@
 <div class="container ">
     <div class="row justify-content-center align-items-center row-cols-2 row-cols-md-3 gx-5 row-cols-lg-5 gx-xl-5 gx-lg-3 gx-md-5 gap-lg-1">
         <div *ngFor="let movie of data2.data.movies" class="col py-2 my-2 hv-auto">
-             <a [routerLink]="['/details/' + movie.id]"> 
+             <a [routerLink]="['/details/' + movie.id ]"> 
                 <div class="card" > 
                     <img class="img-fluid object-fit-cover" [src]="movie.large_cover_image">
                         <div class="card-overlay ">

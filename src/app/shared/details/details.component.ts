@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/auth/service.service';
 
 @Component({
@@ -10,10 +10,11 @@ import { ServiceService } from 'src/app/auth/service.service';
 export class DetailsComponent {
   movie_id: any;
   data2: any;
-  constructor(private serviceService: ServiceService, private router: ActivatedRoute) {
+  suggestions: any;
+  constructor(private serviceService: ServiceService, private router: ActivatedRoute,private route:Router) {
     this.router.params.subscribe(params => {
       this.movie_id = params['id'];
-      console.log('Test ID:', this.movie_id);
+      this.getSuggestions(this.movie_id)
     });
   }
 
@@ -22,11 +23,26 @@ export class DetailsComponent {
   }
 
   getmoviesDetails() {
-    this.serviceService.getMovieDetails(this.movie_id).subscribe((d: any) => {
+    let params = {
+      with_images: true,
+      with_cast: true,
+      movie_id: this.movie_id,
+    }
+    this.serviceService.getMovieDetails(params).subscribe((d: any) => {
       this.data2 = d;
-      console.log(this.data2)
+      
     })
   }     
+  getSuggestions(id?:any) {
+    
+    this.movie_id = id;
+    this.serviceService.getSuggestion(this.movie_id).subscribe((d: any) => {
+      this.suggestions = d;
+      console.log(this.suggestions);
+    });
+    this.getmoviesDetails();
+
+      }
 }
 
 export interface MovieDetails{

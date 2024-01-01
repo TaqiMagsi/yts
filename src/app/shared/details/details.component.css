@@ -90,6 +90,7 @@ h4{
     width: 92px;
     height: 138px;
     border: 4px solid white;
+    cursor: pointer;
 }
 .similerimage:hover{
     border: 4px solid green;

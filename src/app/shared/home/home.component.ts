@@ -18,7 +18,11 @@ export class HomeComponent {
   }
 
   getmovies() {
-    this.serviceService.getMoviesData(this.search).subscribe((d: any) => {
+    let params = {
+      genre: "Animation",
+      query_term: this.search || ''
+    }
+    this.serviceService.getMoviesData(params).subscribe((d: any) => {
       this.data2 = d;
       console.log(this.data2);
     })

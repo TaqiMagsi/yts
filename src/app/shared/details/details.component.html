@@ -9,9 +9,9 @@
     <div class="row ">
         <div class="col-6">
             <div class="d-block  d-md-none">
-                <h6 class="mb-4">{{data2.name}}</h6>
-                <h6 class="mb-0">{{data2.year}}</h6>
-                <h6>{{data2.year}}</h6>
+                <h6 class="mb-4">{{data2?.name}}</h6>
+                <h6 class="mb-0">{{data2?.year}}</h6>
+                <h6>{{data2?.year}}</h6>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-6 col-md-4 col-lg-5">
             
             <div class="card">
-                <img class="poster" [src]="data2.data.movie.medium_cover_image" alt="">
+                <img class="poster" [src]="data2?.data.movie?.medium_cover_image" alt="">
             </div>
             <div class="d-flex flex-column">
                 <button class="btn btn-success d-none d-lg-block border-0 py-2 rounded-1 mt-2 "><i class="downloadIcon bi-download"></i>&nbsp;&nbsp;Download</button>
@@ -74,15 +74,12 @@
                 </div>
             </div>
         </div> 
-        <div class="col d-none d-lg-block">
-             <p class="similer ">Similer Movies</p>
-             <div class="d-flex mb-3 gap-3" >
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg" >
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
-             </div>
-             <div class="d-flex gap-3">
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
-                <img class="similerimage" src="https://img.yts.mx/assets/images/movies/Texas_Chainsaw_2013/medium-cover.jpg">
+        <div  class="col-lg-3 d-none d-lg-block  ">
+             <p class="similer">Similer Movies</p>
+             <div *ngFor="let movie of suggestions.data.movies" class=" d-inline-block p-2  " >
+                <a [routerLink]="['/details/' + movie.id ]" (click)="getSuggestions(movie.id)">
+                    <img class="similerimage" [src]="movie.medium_cover_image">
+                </a>
              </div>
         </div>
     </div>
@@ -99,13 +96,13 @@
     </div>
     <div class="row my-4">
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image1">
         </div>
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot2.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image2">
         </div>
         <div class="col  d-lg-inline d-none">
-            <img class="movie_image" src="https://img.yts.mx/assets/images/movies/silent_night_2023/medium-screenshot3.jpg">
+            <img class="movie_image" [src]="data2.data.movie.large_screenshot_image3">
         </div>
     </div>
     <div class="row mt-5">
@@ -127,24 +124,10 @@
                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">John woo</span>
            </div>
            <h3 class="mb-4" style="font-size: 1.25em;font-weight: 700;">Top cast</h3>
-           <div >
-              <div class="cast-list pb-2 my-2" style="font-size: .9em;">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm1172478.jpg">
-                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">Joel Kinnaman</span>as Brian Godlock
+              <div *ngFor="let cast of data2.data.movie.cast" class="cast-list pb-2 my-2" style="font-size: .9em;">
+                <img class="director " [src]="cast.url_small_image">
+                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">{{cast.name}}</span>as {{cast.character_name}}
               </div>
-            <div class="cast-list pb-2 my-2" style="font-size: .9em;">
-                <img class="director " src="https://img.yts.mx/assets/images/actors/thumb/nm1690270.jpg">
-                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">Amber Midthunder</span>as Haley
-            </div>
-            <div class="cast-list pb-2 my-2" style="font-size: .9em;">
-                <img class="director " src="	https://img.yts.mx/assets/images/actors/thumb/nm0148418.jpg">
-                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">Michael Cera</span>as Trent
-            </div>
-            <div class="cast-list pb-2 my-2" style="font-size: .9em;">
-                <img class="director " src="https://img.yts.mx/assets/images/actors/thumb/nm0574160.jpg">
-                <span style="color: #919191;font-size: .95em;font-weight: 700; " class="px-3">Marnie McPhail</span>as Annie
-            </div>
-           </div>
         </div>
     </div>
     <div class="row my-5">
@@ -189,15 +172,15 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;{{data2.data.movie.torrents[1].size}}</td>
+                                        <td><i class="bi bi-folder-fill"></i>&nbsp;&nbsp;{{data2?.data?.movie?.torrents[1]?.size}}</td>
                                         <td><i class="bi bi-arrows-angle-expand"></i>&nbsp;&nbsp;1920*804</td>
                                         <td><i class="bi bi-volume-down-fill"></i>&nbsp;&nbsp;English 2.0</td>
-                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;{{data2.data.movie.mpa_rating}}</td>
+                                        <td><i class="bi bi-eye-fill"></i>&nbsp;&nbsp;{{data2?.data?.movie?.mpa_rating}}</td>
                                     </tr>
                                     <tr>
                                         <td style="color:#0dd67f;font-weight: 700;"><i class="bi bi-badge-cc-fill"></i>&nbsp;&nbsp;Subtitles</td>
                                         <td><i class="bi bi-film"></i>&nbsp;&nbsp;23.976 fps</td>
-                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;{{data2.data.movie.runtime}}min</td>
+                                        <td><i class="bi bi-clock"></i>&nbsp;&nbsp;{{data2?.data?.movie?.runtime}}min</td>
                                         <td style="font-weight: 700;">Seeds</td>
                                     </tr>
                                 </tbody>
@@ -249,3 +232,4 @@
     </div>
     </div>
 </div>
+<router-outlet></router-outlet>
