@@ -20,7 +20,12 @@ export class HeaderComponent {
     this.getmovies();
   } 
 
-
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event): void {
+   this.show=false
+   this.search=''
+   
+  }
 
   getmovies() {
     this.show=true
@@ -52,11 +57,6 @@ export class HeaderComponent {
   }
   
 
-  @HostListener('click', ['$event'])
-  onClick(event: Event): void {
-   this.show=false
-   this.search=''
-   
-  }
+ 
 
 }
