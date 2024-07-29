@@ -16,6 +16,8 @@ import { SitelayoutComponent } from './layout/sitelayout/sitelayout.component';
 import { DetailsComponent } from './shared/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

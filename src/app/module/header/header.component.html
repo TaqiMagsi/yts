@@ -18,20 +18,23 @@
                 <i style="font-size:10px ;color: #919191;" class="px-2 bi-search"></i>
                 <input type="text" class="moviesearch bg-dark text-white" placeholder="Quick search"  [(ngModel)]="search"  (input)=" getmovies()" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <div *ngIf="data2" class="search-option border-0 d-flex flex-column"  >
-            <!-- <div *ngIf="data2.length === 0">Not Found</div> -->
-               
-                    <div *ngFor="let movie of data2" class="search-detail  p-2 ">
-                        <a class="d-flex flex-row" [routerLink]="['/details/' + movie.id ]">
-                        <img class="movies-cover" [src]="movie.large_cover_image">
-                        <div class="d-flex flex-column mx-3">
-                            <span style="font-size: 12px;color: white !important;">{{movie.title}}</span>
-                            <span style="font-size: 12px;color: #919191 !important;">{{movie.year}}</span>
-                        </div>
-                        </a>
+            <ng-container *ngIf="show===true" >
+                <div id="searchmenu"  *ngIf="data2" class="search-option border-0 d-flex flex-column"  >
+                    <!-- <div *ngIf="data2.length === 0">Not Found</div> -->
+                       
+                            <div  *ngFor="let movie of data2" class="search-detail  p-2 ">
+                                <a class="d-flex flex-row" [routerLink]="['/details/' + movie.id ]">
+                                <img class="movies-cover" [src]="movie.large_cover_image">
+                                <div class="d-flex flex-column mx-3">
+                                    <span style="font-size: 12px;color: white !important;">{{movie.title}}</span>
+                                    <span style="font-size: 12px;color: #919191 !important;">{{movie.year}}</span>
+                                </div>
+                                </a>
+                            </div>
+                       
                     </div>
-               
-            </div>
+            </ng-container>
+            
         </li>
        <li class="px-2 nav-item  text-justify"><a [routerLink]="['/home']" class="text-white">Home</a></li>
         <li class="px-2 nav-item " style="color: green;"><a [routerLink]="['/home']" class="text-white">4K</a></li>

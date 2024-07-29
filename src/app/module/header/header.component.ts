@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/auth/service.service';
 
@@ -12,8 +12,8 @@ export class HeaderComponent {
   data2: any[]=[];
   notFound = false;
   searchshow: any = false;
-   
-  constructor(private serviceService: ServiceService,private router:Router) { }
+  show:boolean=false;
+  constructor(private serviceService: ServiceService,private router:Router,private renderer: Renderer2,private el: ElementRef) { }
 
   ngOnInit() {
 
@@ -23,6 +23,7 @@ export class HeaderComponent {
 
 
   getmovies() {
+    this.show=true
     if (!this.search) {
       this.data2 = [];
       this.notFound = false;
@@ -47,6 +48,15 @@ export class HeaderComponent {
         console.log(err);
       }
     });
+    
+  }
+  
+
+  @HostListener('click', ['$event'])
+  onClick(event: Event): void {
+   this.show=false
+   this.search=''
+   
   }
 
 }
