@@ -19,7 +19,7 @@
                 <input type="text" class="moviesearch bg-dark text-white" placeholder="Quick search"  [(ngModel)]="search"  (input)=" getmovies()" aria-label="Username" aria-describedby="basic-addon1">
             </div>
             <ng-container *ngIf="show===true" >
-                <div id="searchmenu"  *ngIf="data2" class="search-option border-0 d-flex flex-column"  >
+                <div id="searchmenu"  *ngIf="data2" class="search-option border-0 "  >
                     <!-- <div *ngIf="data2.length === 0">Not Found</div> -->
                        
                             <div  *ngFor="let movie of data2" class="search-detail  p-2 ">

@@ -22,7 +22,12 @@ export class HeaderComponent {
 
   @HostListener('document:click', ['$event'])
   onClick(event: Event): void {
-   this.show=false
+  /*  this.show=false */
+  debugger
+  const myDiv = this.el.nativeElement.querySelector('#searchmenu');
+  if (myDiv) {
+    this.renderer.setStyle(myDiv,'display', 'none');
+  }
    this.search=''
    
   }
