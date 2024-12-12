@@ -5,7 +5,7 @@
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/resources/",
-  "url": "/",
+  "url": "http: //localhost:4200",
   "enableServer": true,
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
@@ -76,7 +76,10 @@
     "binaryName": "neutralino",
     "resourcesPath": "/resources/",
     "extensionsPath": "/extensions/",
-    "clientLibrary": "/resources/js/neutralino.js",
+    "frontendLibrary": {
+      "patchFile": "../src/index.html",
+      "devUrl": "http://localhost:4200"
+    },
     "binaryVersion": "5.5.0",
     "clientVersion": "5.5.0"
   }
